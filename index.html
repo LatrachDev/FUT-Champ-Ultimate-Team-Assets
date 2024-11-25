@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PES360 PLAYER EVOLUTION SOCCER</title>
+    <meta name="description" content="Create and manage your FUT (Ultimate Team) with dynamic formations like 4-4-2 or 4-3-3. Add, position, and optimize your squad for the best performance.">
+    <meta name="keywords" content="FUT Ultimate Team, FUT Team Builder, FIFA Ultimate Team, Squad Creator, Formation Manager, Football Team Customizer, Online FUT Builder">
+    <meta name="author" content="Mohammed Latrach">
+    <script src="js/tailwind.js"></script>
+</head>
+<body>
+    <!-- Full View Background -->
+    <div class="bg-[url('./src/Background/football-stadium.jpg')] bg-cover bg-center h-screen relative">
+        
+        <!-- Top Center Logo -->
+        <div class="absolute top-4 left-1/2 transform -translate-x-1/2">
+            <img src="src/Logo/Logo-PES360.png" alt="Logo-PES360" class="duration-300 w-24">
+        </div>
+
+        
+        <!-- Main Content -->
+        <div class="flex justify-between items-center h-full px-10">
+
+            <!-- Formation Display -->
+            <div class="relative bg-[url('./src/stadium_background.webp')] bg-cover bg-center p-4 rounded-lg w-2/3 h-[90%] shadow-lg">
+                <!-- Players -->
+                <div class="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-4">
+                    <!-- Forwards -->
+                    <div class="flex justify-center space-x-4">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    </div>
+
+                    <!-- Midfielders -->
+                    <div class="flex justify-center space-x-4">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    </div>
+
+                    <!-- Defenders -->
+                    <div class="flex justify-center space-x-4">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    </div>
+
+                    <!-- Goalkeeper -->
+                    <div class="flex justify-center">
+                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Formation Selector -->
+            <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg w-1/3 shadow-lg">
+                <div class="text-white mb-4">
+                    <label for="formation" class="block font-bold">Formation</label>
+                    <select id="formation" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700">
+                        <option>4 - 3 - 3</option>
+                        <option>4 - 4 - 2</option>
+                    </select>
+                </div>
+                <div class="text-white">
+                    <label for="add-player" class="block font-bold">Add a player</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="add-player" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Player Name">
+                        <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">Add</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
