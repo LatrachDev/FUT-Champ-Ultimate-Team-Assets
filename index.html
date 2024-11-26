@@ -9,73 +9,139 @@
     <meta name="author" content="Mohammed Latrach">
     <script src="js/tailwind.js"></script>
 </head>
-<body>
+<body class="bg-[url('./src/Background/football-stadium.jpg')] bg-cover bg-center h-full"></body>>
     <!-- Full View Background -->
-    <div class="bg-[url('./src/Background/football-stadium.jpg')] bg-cover bg-center h-screen relative">
-        
+    <!-- <div class="bg-[url('./src/Background/football-stadium.jpg')] bg-cover bg-center h-screen"> -->
+
         <!-- Top Center Logo -->
-        <div class="absolute top-4 left-1/2 transform -translate-x-1/2">
-            <img src="src/Logo/Logo-PES360.png" alt="Logo-PES360" class="duration-300 w-24">
-        </div>
+        <nav class="w-full">
+            <img src="images/Logo-PES360.png" alt="Logo-PES360" class="w-24 mx-auto">
+        </nav>
 
-        
-        <!-- Main Content -->
-        <div class="flex justify-between items-center h-full px-10">
+        <!-- Main container -->
+        <main class="w-full mt-10 p-5 lg:flex lg:items-center lg:justify-center">
 
-            <!-- Formation Display -->
-            <div class="relative bg-[url('./src/stadium_background.webp')] bg-cover bg-center p-4 rounded-lg w-2/3 h-[90%] shadow-lg">
+         <!-- <main class="w-full mt-10 flex items-center justify-center p-5"> -->
+
+            <!-- Formation container -->
+             <div class="bg-[url('./src/stadium_background.webp')] bg-cover bg-center p-4 rounded-md shadow-md w-96 sm:w-5/12 md:w-8/12">
                 <!-- Players -->
-                <div class="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-4">
+                <div class="flex flex-col items-center h-full w-full">
                     <!-- Forwards -->
-                    <div class="flex justify-center space-x-4">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    <div class="flex justify-around w-full">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[30%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[30%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[30%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
                     </div>
-
                     <!-- Midfielders -->
-                    <div class="flex justify-center space-x-4">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    <div class="flex justify-around w-full">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[30%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[30%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[30%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
                     </div>
-
                     <!-- Defenders -->
-                    <div class="flex justify-center space-x-4">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    <div class="flex justify-between w-full">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[25%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[25%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[25%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[25%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
                     </div>
-
                     <!-- Goalkeeper -->
-                    <div class="flex justify-center">
-                        <img src="src/card.png" alt="Player" class="duration-300 w-52 h-auto hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
+                    <div class="flex justify-around w-full">
+                        <img src="images/card.png" alt="Player" class="duration-300 w-[30%] max-w-[70px] sm:max-w-[100px] hover:filter hover:drop-shadow-[2px_8px_22px_#2F9B75]">
                     </div>
                 </div>
-            </div>
+             </div>
 
+            <!-- Player Form -->
+            <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg lg:w-5/12 mx-5 shadow-lg mt-6">
+                <h2 class="text-white font-bold text-lg mb-4">Formation</h2>
 
-            <!-- Formation Selector -->
-            <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg w-1/3 shadow-lg">
-                <div class="text-white mb-4">
-                    <label for="formation" class="block font-bold">Formation</label>
-                    <select id="formation" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700">
-                        <option>4 - 3 - 3</option>
-                        <option>4 - 4 - 2</option>
+                <div class="flex gap-2 mb-4">
+                    <select id="position" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
+                        <option value="" disabled selected>Formations</option>
+                        <option value="433">4 - 3 - 3</option>
+                        <option value="442">4 - 4 - 2</option>
                     </select>
                 </div>
-                <div class="text-white">
-                    <label for="add-player" class="block font-bold">Add a player</label>
-                    <div class="flex gap-2">
-                        <input type="text" id="add-player" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Player Name">
-                        <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">Add</button>
-                    </div>
+
+                <h2 class="text-white font-bold text-lg mb-4">Add a player</h2>
+
+                <!-- Player Name and Photo URL -->
+                <div class="flex gap-2 mb-4">
+                    <input type="text" id="player-name" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Player name">
+                    <input type="url" id="player-photo-url" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="URL of the photo">
+                </div>
+
+                <!-- Nationality and Flag -->
+                <div class="flex gap-2 mb-4">
+                    <select id="nationality" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
+                        
+                        <option value="" disabled selected>Nationality</option>
+                        <option value="dz">Algeria</option>
+                        <option value="ar">Argentina</option>
+                        <option value="be">Belgium</option>
+                        <option value="br">Brazil</option>
+                        <option value="co">Colombia</option>
+                        <option value="eg">Egypt</option>
+                        <option value="fr">France</option>
+                        <option value="de">Germany</option>
+                        <option value="it">Italy</option>
+                        <option value="kr">South Korea</option>
+                        <option value="ma">Morocco</option>
+                        <option value="mx">Mexico</option>
+                        <option value="nl">Netherlands</option>
+                        <option value="pl">Poland</option>
+                        <option value="pt">Portugal</option>
+                        <option value="rs">Serbia</option>
+                        <option value="sa">Saudi Arabia</option>
+                        <option value="es">Spain</option>
+                        <option value="tn">Tunisia</option>
+                        <option value="gb">United Kingdom</option>
+                        <option value="us">United States</option>
+
+                    </select>
+                    <input type="url" id="flag-url" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="URL of the flag">
+                </div>
+
+                <!-- Club and Position -->
+                <div class="flex gap-2 mb-4">
+                    <input type="url" id="club-url" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="URL of the club">
+                    <select id="position" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
+                        <option value="" disabled selected>Position</option>
+                        <option value="gk">Goalkeeper</option>
+                        <option value="lb">Left-Back</option>
+                        <option value="cb">Center-Back</option>
+                        <option value="rb">Right-Back</option>
+                        <option value="lm">Left Midfielder</option>
+                        <option value="cm">Central Midfielders</option>
+                        <option value="rm">Right Midfielder</option>
+                        <option value="rw">Right Winger</option>
+                        <option value="lw">Left Winger</option>
+                        <option value="st">Striker</option>
+                    </select>
+                </div>
+
+                <!-- Player Stats -->
+                <div class="grid grid-cols-2 gap-2 mb-4">
+                    <input type="number" id="pace" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Pace" min="0">
+                    <input type="number" id="shooting" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Shooting" min="0">
+                    <input type="number" id="passing" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Passing" min="0">
+                    <input type="number" id="dribbling" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Dribbling" min="0">
+                    <input type="number" id="defending" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Defending" min="0">
+                    <input type="number" id="physical" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Physical" min="0">
+                </div>
+
+                <!-- Add Button -->
+                <div class="text-center">
+                    <button class="bg-green-600 duration-300 hover:bg-green-700 text-white font-bold px-4 py-2 rounded w-full">Add a player</button>
                 </div>
             </div>
 
-        </div>
-    </div>
-</body>
 
+
+         </main>
+
+    <!-- </div> -->
+</body>
 </html>
