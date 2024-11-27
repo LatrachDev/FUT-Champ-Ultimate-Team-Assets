@@ -61,7 +61,7 @@ function updateFormation(formation) {
 
         const player = document.createElement("div");
         player.className =
-            "player absolute w-[50px] h-[50px] bg-cover bg-center rounded-full transform -translate-x-1/2 -translate-y-1/2";
+            "player absolute w-[70px] h-[80px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2";
         player.style.top = position.top;
         player.style.left = position.left;
         player.style.backgroundImage = "url('images/card.png')"; // placeholder image
