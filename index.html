@@ -1,24 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PES360 PLAYER EVOLUTION SOCCER</title>
-    <meta name="description" content="Create and manage your FUT (Ultimate Team) with dynamic formations like 4-4-2 or 4-3-3. Add, position, and optimize your squad for the best performance.">
-    <meta name="keywords" content="FUT Ultimate Team, FUT Team Builder, FIFA Ultimate Team, Squad Creator, Formation Manager, Football Team Customizer, Online FUT Builder">
+    <meta name="description"
+        content="Create and manage your FUT (Ultimate Team) with dynamic formations like 4-4-2 or 4-3-3. Add, position, and optimize your squad for the best performance.">
+    <meta name="keywords"
+        content="FUT Ultimate Team, FUT Team Builder, FIFA Ultimate Team, Squad Creator, Formation Manager, Football Team Customizer, Online FUT Builder">
     <meta name="author" content="Mohammed Latrach">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <style>
         .player {
-            transition: .3s; 
+            transition: .3s;
         }
 
         .player:hover {
             filter: drop-shadow(0px 0px 15px #2ee0a2);
         }
+
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #f4f4f4;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* scrollbar costum style */
+        #players-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #players-list::-webkit-scrollbar-thumb {
+            background-color: #555; /* Change to your desired color */
+            border-radius: 4px;
+        }
+
+        #players-list::-webkit-scrollbar-thumb:hover {
+            background-color: #333; /* Darker shade on hover */
+        }
     </style>
 </head>
+
 <body class="bg-[url('./src/Background/football-stadium.jpg')] bg-cover bg-center min-h-screen text-gray-100">
     <!-- Top Center Logo -->
     <nav class="w-full py-4">
@@ -27,22 +72,48 @@
 
     <!-- Main Container -->
     <main class="w-full p-5 flex flex-col md:flex-row md:items-start md:justify-around">
-    
-        <!-- Formation Container -->
-        <div class="relative bg-[url('./src/stadium_background.webp')] bg-cover bg-center p-4 rounded-md shadow-md lg:mr-4 md:mr-2 sm:w-full md:w-1/2 h-[400px]" id="formation-container">
-                
-            <!-- black overlay 40% opacity -->
-             <div class="absolute inset-0 bg-black bg-opacity-40 rounded-md"></div>
 
-            <!-- formation will be added here -->
+        <!-- Formation Container -->
+        <div class="relative bg-[url('./src/stadium_background.webp')] bg-cover bg-center p-4 rounded-[0.5rem] shadow-md lg:mr-4 md:mr-2 sm:w-full md:w-1/2 h-[447px]"
+            id="formation-container">
+            <!-- Black overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-40 rounded-[0.5rem]"></div>
+
+            <!-- Players for 4-3-3 formation -->
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 10%; left: 30%; background-image: url('images/card.png');" data-position="lw"></div>
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 10%; left: 50%; background-image: url('images/card.png');" data-position="st"></div>
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 10%; left: 70%; background-image: url('images/card.png');" data-position="rw"></div>
+
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 40%; left: 20%; background-image: url('images/card.png');" data-position="lm"></div>
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 40%; left: 50%; background-image: url('images/card.png');" data-position="cm"></div>
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 40%; left: 80%; background-image: url('images/card.png');" data-position="rm"></div>
+
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 70%; left: 10%; background-image: url('images/card.png');" data-position="lb"></div>
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 70%; left: 30%; background-image: url('images/card.png');" data-position="cb"></div>
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 70%; left: 70%; background-image: url('images/card.png');" data-position="cb"></div>
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 70%; left: 90%; background-image: url('images/card.png');" data-position="rb"></div>
+
+            <div class=" players absolute w-[50px] h-[60px] bg-cover bg-center transform -translate-x-1/2 -translate-y-1/2"
+                style="top: 90%; left: 50%; background-image: url('images/card.png');" data-position="gk"></div>
         </div>
 
         <!-- Player Form -->
         <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg lg:w-1/2 md:w-1/2 mx-auto shadow-lg mt-6 md:mt-0">
-            
+
             <h2 class="text-white font-bold text-lg mb-4">Formation</h2>
             <div class="flex gap-2 mb-4">
-                <select id="formation-select" class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
+                <select id="formation-select"
+                    class="duration-300 w-full p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
                     <option value="4-3-3">4 - 3 - 3</option>
                     <option value="4-4-2">4 - 4 - 2</option>
                 </select>
@@ -52,14 +123,19 @@
 
             <!-- Player name & photo url -->
             <div class="flex gap-2 mb-4">
-                <input type="text" id="player-name" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="Player name">
-                <input type="url" id="player-photo-url" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="URL of the photo">
+                <input type="text" id="player-name"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="Player name">
+                <input type="url" id="player-photo-url"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="URL of the photo">
             </div>
 
             <!-- Nationality & Flag url -->
             <div class="flex gap-2 mb-4">
-                <select id="nationality" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
-                    
+                <select id="nationality"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
+
                     <option value="" disabled selected>Nationality</option>
                     <option value="dz">Algeria</option>
                     <option value="ar">Argentina</option>
@@ -84,13 +160,18 @@
                     <option value="us">United States</option>
 
                 </select>
-                <input type="url" id="flag-url" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="URL of the flag">
+                <input type="url" id="flag-url"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="URL of the flag">
             </div>
 
             <!-- Club url & position -->
             <div class="flex gap-2 mb-4">
-                <input type="url" id="club-url" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="URL of the club">
-                <select id="position" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
+                <input type="url" id="club-url"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="URL of the club">
+                <select id="position"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700 cursor-pointer">
                     <option value="" disabled selected>Position</option>
                     <option value="gk">(GK) Goalkeeper</option>
                     <option value="lb">(LB) Left-Back</option>
@@ -105,19 +186,55 @@
                 </select>
             </div>
 
-           <!-- Player stats (dribble, shoot...) -->
-            <div class="flex gap-2 mb-4">
-                <input type="number" id="player-pace" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="PAC" min="0" max="100">
-                <input type="number" id="player-shooting" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="SHO" min="0" max="100">
-                <input type="number" id="player-passing" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="PAS" min="0" max="100">
-                <input type="number" id="player-dribbling" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="DRI" min="0" max="100">
-                <input type="number" id="player-defending" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="DEF" min="0" max="100">
-                <input type="number" id="player-physical" class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" placeholder="PHY" min="0" max="100">
+            <!-- Player stats (dribble, shoot...) -->
+            <div id="playerStats" class="flex gap-2 mb-4">
+                <input type="number" id="player-pace"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="PAC" min="0" max="100">
+                <input type="number" id="player-shooting"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="SHO" min="0" max="100">
+                <input type="number" id="player-passing"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="PAS" min="0" max="100">
+                <input type="number" id="player-dribbling"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="DRI" min="0" max="100">
+                <input type="number" id="player-defending"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="DEF" min="0" max="100">
+                <input type="number" id="player-physical"
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700"
+                    placeholder="PHY" min="0" max="100">
+            </div>
+
+            <!-- Gk stats (diving, reflexes...) -->
+            <div id="gkStats" class="gap-2 mb-4 hidden">
+                <input type="number" id="gk-diving" 
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" 
+                    placeholder="DIV" min="0" max="100">
+                <input type="number" id="gk-kicking" 
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" 
+                    placeholder="KCK" min="0" max="100">
+                <input type="number" id="gk-speed" 
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" 
+                    placeholder="SPD" min="0" max="100">
+                <input type="number" id="gk-handling" 
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" 
+                    placeholder="HND" min="0" max="100">
+                <input type="number" id="gk-reflexes" 
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" 
+                    placeholder="RFX" min="0" max="100">
+                <input type="number" id="gk-positioning" 
+                    class="duration-300 w-1/2 p-2 rounded bg-gray-800 text-white border border-gray-700" 
+                    placeholder="POS" min="0" max="100">
             </div>
 
             <!-- Add player button -->
             <div class="text-center">
-                <button id="add-player-btn" class="bg-green-600 duration-300 hover:bg-green-700 text-white font-bold px-4 py-2 rounded w-full">Add a player</button>
+                <button id="add-player-btn"
+                    class="bg-green-600 duration-300 hover:bg-green-700 text-white font-bold px-4 py-2 rounded w-full">Add
+                    a player</button>
             </div>
         </div>
     </main>
@@ -125,13 +242,25 @@
     <!-- <div class="relative bg-gray-900 bg-opacity-50 p-4 rounded-lg lg:w-1/2 md:w-1/2 mx-auto shadow-lg"> -->
     <div class="relative bg-gray-900 bg-opacity-50 p-4 rounded-lg w-10/12 mx-auto shadow-lg">
         <h2 class="text-white font-bold text-lg mb-4 text-center">Added Players</h2>
-        <div id="players-list" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div id="players-list" class="grid grid-cols-1 sm:grid-cols-3 gap-4 overflow-y-auto max-h-[400px]">
             <!-- Players will be added dynamically here -->
         </div>
     </div>
 
-    <script src="js/script.js"></script> <!-- add player function --> 
-    <script src="js/formation.js"></script>
+    <div id="playerModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Select a Player</h2>
+            <div id="playerList"></div>
+        </div>
+    </div>
+
+    <footer class="w-full h-24 bg-black bg-opacity-20 flex justify-center items-center mt-10">
+        <p class="text-white text-center">Designed by <span class="font-semibold">MOHAMMED LATRACH</span> <br> <span class="text-[0.7rem]">&copy; 2024 PES360 PLAYER EVOLUTION SOCCER</span></p>
+    </footer>
+
+    <script src="js/script.js"></script> 
 
 </body>
+
 </html>
