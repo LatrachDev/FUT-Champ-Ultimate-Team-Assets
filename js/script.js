@@ -6,22 +6,27 @@ document.addEventListener("DOMContentLoaded", () => {
             { top: "10%", left: "30%", position: "lw" },
             { top: "10%", left: "50%", position: "st" },
             { top: "10%", left: "70%", position: "rw" },
+
             { top: "40%", left: "20%", position: "lm" },
             { top: "40%", left: "50%", position: "cm" },
             { top: "40%", left: "80%", position: "rm" },
+
             { top: "70%", left: "10%", position: "lb" },
             { top: "70%", left: "30%", position: "cb" },
             { top: "70%", left: "70%", position: "cb" },
             { top: "70%", left: "90%", position: "rb" },
+
             { top: "90%", left: "50%", position: "gk" }
         ],
         "4-4-2": [
             { top: "10%", left: "35%", position: "st" },
             { top: "10%", left: "65%", position: "st" },
+
             { top: "40%", left: "15%", position: "lm" },
             { top: "40%", left: "35%", position: "cm" },
             { top: "40%", left: "65%", position: "cm" },
             { top: "40%", left: "85%", position: "rm" },
+
             { top: "70%", left: "10%", position: "lb" },
             { top: "70%", left: "30%", position: "cb" },
             { top: "70%", left: "70%", position: "cb" },
@@ -53,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             player.style.top = position.top;
             player.style.left = position.left;
             player.style.backgroundImage = "url('images/card.png')";
-            player.setAttribute("data-position", position.position);
+            player.setAttribute("data-position", position.position); // used to store the role (e.g., "lw", "st", "gk") 
             
             // add a click event to open the modal for selecting players
             player.addEventListener("click", () => {
@@ -67,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             container.appendChild(player);
         });
 
-        attachPlayerModalListeners(); 
+        attachPlayerModalListeners(); //for close player selection modal
     }   
     
     // **************************************************************
@@ -326,7 +331,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // hadi bach nfiltri players bl posiiton dyalhom 
     function showPlayersForPosition(position) {
-        const players = JSON.parse(localStorage.getItem("players")) || [];
+        //If strg doesn't contain players key or it's value null, it defaults to an empty array ([]).
+        const players = JSON.parse(localStorage.getItem("players")) || []; //parse str to arr||obj
         
         // Map of grouped positions (e.g., forwards, midfielders)
         const positionMap = {
